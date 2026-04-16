@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paperazzi — Research Paper Finder</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NOISE OVERLAY ── -->
+  <div class="noise"></div>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="logo-group">
+      <span class="logo-icon">◈</span>
+      <div>
+        <h1 class="logo-name">Paperazzi</h1>
+        <p class="logo-sub">Research Paper Finder</p>
+      </div>
+    </div>
+    <div class="header-tag">Powered by ArXiv</div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <p class="hero-eyebrow">Explore the frontier of knowledge</p>
+    <h2 class="hero-title">Find any research paper,<br /><em>instantly.</em></h2>
+  
+  <section class="ml-pipeline">
+    <h3>ML Pipeline</h3>
+    <div class="pipeline">
+      <span>Query</span> → 
+      <span>Embedding</span> → 
+      <span>Similarity</span> → 
+      <span>Ranking</span>
+    </div>
+  </section>
+
+    <!-- SEARCH FORM -->
+    <form class="search-form" id="searchForm" autocomplete="off">
+      <div class="input-wrapper">
+        <span class="input-icon">⌕</span>
+        <input
+          type="text"
+          id="queryInput"
+          class="search-input"
+          placeholder="Paper title or research topic…"
+          required
+        />
+      </div>
+
+      <div class="form-controls">
+        <div class="count-control">
+          <label for="countInput">Results</label>
+          <div class="count-row">
+            <button type="button" class="count-btn" id="decBtn">−</button>
+            <span id="countDisplay">5</span>
+            <button type="button" class="count-btn" id="incBtn">+</button>
+          </div>
+        </div>
+        <button type="submit" class="search-btn" id="searchBtn">
+          <span id="btnText">Search</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ── RESULTS AREA ── -->
+  <main id="results" class="results-area hidden">
+
+    <!-- Status bar -->
+    <div class="results-meta" id="resultsMeta"></div>
+
+    <!-- Cards grid -->
+    <div class="cards-grid" id="cardsGrid"></div>
+
+  </main>
+
+  <!-- ── EMPTY STATE ── -->
+  <div class="empty-state hidden" id="emptyState">
+    <span class="empty-icon">◎</span>
+    <p>No papers found for this query.<br />Try a different keyword or topic.</p>
+  </div>
+
+  <!-- ── ERROR STATE ── -->
+  <div class="error-state hidden" id="errorState">
+    <span class="error-icon">⚠</span>
+    <p id="errorMsg">Something went wrong. Make sure the server is running.</p>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>Paperazzi</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
